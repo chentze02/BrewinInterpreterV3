@@ -1,0 +1,28 @@
+(tclass Foo (field_type)
+  (method void chatter ((field_type x)) 
+    (call x quack)         # line A
+  )
+  (method bool compare_to_5 ((field_type x)) 
+    (return (== x 5))
+  )
+)
+(class Duck
+ (method void quack () (print "quack"))
+)
+      (class main
+        (field int x 5)
+        (field Foo@Duck t1)
+        (field Foo@int t2)
+        
+        (method Foo@Duck main () 
+          (begin 
+     (print x)
+     (let ((Foo@Duck@int y))
+                    (set y (new Foo@Duck))
+                    (call y chatter (new Duck))
+          (print "hello")
+
+     )
+   )
+        )
+      )
